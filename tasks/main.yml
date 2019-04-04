@@ -1,2 +1,25 @@
 ---
 # tasks file for egeneralov.zabbix-repository
+
+- name: Install https transport and privacy guard tools
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+    name:
+      - apt-transport-https
+      - gnupg2
+
+- name: Import zabbix repository key
+  apt_key:
+    url: https://repo.zabbix.com/zabbix-official-repo.key
+  register: zbx_repo_key
+
+- name: Add zabbix repository
+  apt_repository:
+    repo: "deb https://repo.zabbix.com/zabbix/{{ zbx_version }}/{{ ansible_distribution_release | lower }}/ {{ ansible_distribution_release }} main"
+  register: zbx_repo
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+  when: zbx_repo is changed or zbx_repo_key is changed

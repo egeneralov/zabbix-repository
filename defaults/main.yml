@@ -1,2 +1,4 @@
 ---
 # defaults file for egeneralov.zabbix-repository
+
+zbx_version: 4.2
