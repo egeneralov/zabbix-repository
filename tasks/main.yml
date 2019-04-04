@@ -16,7 +16,7 @@
 
 - name: Add zabbix repository
   apt_repository:
-    repo: "deb https://repo.zabbix.com/zabbix/{{ zbx_version }}/{{ ansible_distribution_release | lower }}/ {{ ansible_distribution_release }} main"
+    repo: "deb https://repo.zabbix.com/zabbix/{{ zbx_version }}/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
   register: zbx_repo
 
 - name: Update apt cache
