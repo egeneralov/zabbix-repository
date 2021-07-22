@@ -3,22 +3,36 @@ galaxy_info:
   description: Provision zabbix repository installation
   license: MIT
   min_ansible_version: 2.4
-  #github_branch:
   platforms:
-    - name: Debian
-      versions:
-        - wheezy
-        - jessie
-        - stretch
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-        - zesty
-
+  - name: Debian
+    versions:
+    - sid
+    - bullseye
+    - buster
+    - stretch
+    - jessie
+    - wheezy
+    - lenny
+    - etch
+    - squeeze
+  - name: Ubuntu
+    versions:
+    - bionic
+    - cosmic
+    - disco
+    - lucid
+    - precise
+    - saucy
+    - trusty
+    - wily
+    - xenial
+    - zesty
+  - name: EL
+    versions:
+      - 7
+      - 8
   galaxy_tags:
-    - development
-    - packaging
-    - system
-
+    - zbx
+    - zabbix
+    - repository
 dependencies: []

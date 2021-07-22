@@ -1,5 +1,6 @@
 ---
-- hosts: localhost
+
+- hosts: zbx
   remote_user: root
   roles:
     - egeneralov.zabbix-repository
